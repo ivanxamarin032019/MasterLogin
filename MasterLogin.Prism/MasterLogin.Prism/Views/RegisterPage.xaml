@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MasterLogin.Prism.Views.RegisterPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:i18n="clr-namespace:MasterLogin.Prism.Helpers"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:prism="http://prismlibrary.com"
+             Title="{Binding Title}"
+             ios:Page.UseSafeArea="true"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="{StaticResource ColorBackground}">
+
+    <AbsoluteLayout>
+
+        <StackLayout Padding="5"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
+
+            <ScrollView>
+                <StackLayout Spacing="0">
+                    <ffimageloading:CachedImage Margin="5"
+                                                Aspect="AspectFit"
+                                                CacheDuration="50"
+                                                HeightRequest="150"
+                                                RetryCount="3"
+                                                RetryDelay="600"
+                                                Source="{Binding Image}">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation />
+                        </ffimageloading:CachedImage.Transformations>
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Email}">
+                        <Entry Keyboard="Email"
+                               Placeholder="{i18n:Translate EmailPlaceHolder}"
+                               Text="{Binding User.Email}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Document}">
+                        <Entry Placeholder="{i18n:Translate DocumentPlaceHolder}" Text="{Binding User.Document}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate FirstName}">
+                        <Entry Placeholder="{i18n:Translate FirstNamePlaceHolder}" Text="{Binding User.FirstName}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate LastName}">
+                        <Entry Placeholder="{i18n:Translate LastName}" Text="{Binding User.LastName}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Address}">
+                        <Entry Placeholder="{i18n:Translate AddressPlaceHolder}" Text="{Binding User.Address}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Phone}">
+                        <Entry Keyboard="Telephone"
+                               Placeholder="{i18n:Translate PhonePlaceHolder}"
+                               Text="{Binding User.Phone}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined"
+                                                   EnablePasswordVisibilityToggle="true"
+                                                   Hint="{i18n:Translate Password}">
+                        <Entry IsPassword="True"
+                               Placeholder="{i18n:Translate PasswordPlaceHolder}"
+                               Text="{Binding User.Password}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined"
+                                                   EnablePasswordVisibilityToggle="true"
+                                                   Hint="{i18n:Translate PasswordConfirm}">
+                        <Entry IsPassword="True"
+                               Placeholder="{i18n:Translate PasswordConfirmPlaceHolder}"
+                               Text="{Binding User.PasswordConfirm}" />
+                    </inputLayout:SfTextInputLayout>
+
+                </StackLayout>
+            </ScrollView>
+
+            <Button Command="{Binding RegisterCommand}"
+                    IsEnabled="{Binding IsEnabled}"
+                    Text="{i18n:Translate Register}"
+                    VerticalOptions="EndAndExpand" />
+
+            <Button BackgroundColor="{StaticResource ColorAccent}"
+                    Command="{Binding Register1Command}"
+                    Text="Funicona"
+                    VerticalOptions="EndAndExpand" />
+
+        </StackLayout>
+        <!--<busyindicator:SfBusyIndicator Title="{i18n:Translate Loading}"
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AnimationType="Gear"
+                                       BackgroundColor="{StaticResource ColorAccent}"
+                                       HorizontalOptions="Center"
+                                       IsBusy="{Binding IsRunning}"
+                                       TextColor="{StaticResource ColorFontInverse}"
+                                       VerticalOptions="Center"
+                                       ViewBoxHeight="80"
+                                       ViewBoxWidth="80" />-->
+    </AbsoluteLayout>
+
+</ContentPage>

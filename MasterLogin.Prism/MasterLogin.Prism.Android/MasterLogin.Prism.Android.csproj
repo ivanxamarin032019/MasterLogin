@@ -61,11 +61,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1239" />
-    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Core">
+      <Version>18.2.0.57</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator">
+      <Version>18.2.0.57</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v4">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials.Interfaces">
+      <Version>1.5.3.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\Localize.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="SplashActivity.cs" />
@@ -107,10 +137,17 @@
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MasterLogin.Common\MasterLogin.Common.csproj">
+      <Project>{3856DAC2-0F4D-4CE8-B5F6-8AE4C361ECB0}</Project>
+      <Name>MasterLogin.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MasterLogin.Prism\MasterLogin.Prism.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>MasterLogin.Prism</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

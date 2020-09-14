@@ -3,6 +3,10 @@ using Android.Content.PM;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using Syncfusion.SfBusyIndicator.XForms.Droid;
+using Plugin.CurrentActivity;
+using Plugin.Permissions;
+
 
 namespace MasterLogin.Prism.Droid
 {
@@ -17,13 +21,19 @@ namespace MasterLogin.Prism.Droid
 
             base.OnCreate(savedInstanceState);
 
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            new SfBusyIndicatorRenderer();
+
             LoadApplication(new App(new AndroidInitializer()));
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }

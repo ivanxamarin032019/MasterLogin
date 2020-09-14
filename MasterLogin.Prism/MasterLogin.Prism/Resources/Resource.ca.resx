@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accept" xml:space="preserve">
+    <value>Acceptar</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ConnectionError" xml:space="preserve">
+    <value>Comproveu la connexió a Internet</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Carregant ...</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Iniciar Sessió</value>
+  </data>
+  <data name="ModifyUser" xml:space="preserve">
+    <value>Modificar usuari</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Entre la seva adreça electrònica ...</value>
+  </data>
+  <data name="EmailError" xml:space="preserve">
+    <value>Ha d'entrar un correu electrònic vàlid.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Clau d'acces</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Entrada la contrasenya ...</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>Ha d'entrar la contrasenya.</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Ha oblidat la seva contrasenya?</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrar Nou Usuari</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Correu electrònic o contrasenya incorrectes.</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Tancar sessió</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Desar</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>Confirmació de la contrasenya</value>
+  </data>
+  <data name="PasswordConfirmError1" xml:space="preserve">
+    <value>Has ingressar una confirmació de contrasenya.</value>
+  </data>
+  <data name="PasswordConfirmError2" xml:space="preserve">
+    <value>La contrasenya i la confirmació no concorden.</value>
+  </data>
+  <data name="PasswordConfirmPlaceHolder" xml:space="preserve">
+    <value>Ingressa una confirmació de contrasenya ...</value>
+  </data>
+  <data name="Error001" xml:space="preserve">
+    <value>Usuari no trobat.</value>
+  </data>
+  <data name="Error002" xml:space="preserve">
+    <value>Un usuari amb aquest email ja es troba registrat.</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="RegisterMessge" xml:space="preserve">
+    <value>El seu usuari s'ha registrat correctament, es va enviar un correu electrònic per confirmar el compte d'usuari.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel·la</value>
+  </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>recuperar Contrasenya</value>
+  </data>
+  <data name="RecoverPasswordMessage" xml:space="preserve">
+    <value>S'ha enviat un correu electrònic per canviar la contrasenya.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Canviar Contrasenya</value>
+  </data>
+  <data name="ChangeUserMessage" xml:space="preserve">
+    <value>Usuari actualitzat.</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmació de contrasenya nova</value>
+  </data>
+  <data name="ConfirmNewPasswordError1" xml:space="preserve">
+    <value>Has ingressar una confirmació per a la nova contrasenya.</value>
+  </data>
+  <data name="ConfirmNewPasswordError2" xml:space="preserve">
+    <value>La nova i la confirmació no concorden.</value>
+  </data>
+  <data name="ConfirmNewPasswordPlaceHolder" xml:space="preserve">
+    <value>Introduïu la confirmació per a la contrasenya nova ...</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contrasenya actual</value>
+  </data>
+  <data name="CurrentPasswordError" xml:space="preserve">
+    <value>Has ingressar la contrasenya actual.</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Ingressa la contrasenya actual</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nova contrasenya</value>
+  </data>
+  <data name="NewPasswordError" xml:space="preserve">
+    <value>Has ingressar una nova cotraseña.</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Introduïu la contrasenya nova ...</value>
+  </data>
+  <data name="Error003" xml:space="preserve">
+    <value>La contrasenya actual és incorrecta.</value>
+  </data>
+  <data name="ChangePassworrdMessage" xml:space="preserve">
+    <value>La contrasenya s'ha canviat amb èxit.</value>
+  </data>
+</root>

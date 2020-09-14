@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage x:Class="MasterLogin.Prism.Views.LoginPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:i18n="clr-namespace:MasterLogin.Prism.Helpers"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:prism="http://prismlibrary.com"
+             Title="{Binding Title}"
+             ios:Page.UseSafeArea="true"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="{StaticResource ColorBackground}">
+
+    <AbsoluteLayout>
+        <StackLayout Padding="5"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
+            <ScrollView>
+                <StackLayout>
+                    <Image Margin="20"
+                           HeightRequest="150"
+                           Source="onsale" />
+
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Email}">
+                            <Entry Keyboard="Email"
+                                   Placeholder="{i18n:Translate EmailPlaceHolder}"
+                                   Text="{Binding Email}" />
+                        </inputLayout:SfTextInputLayout>
+
+                        <inputLayout:SfTextInputLayout ContainerType="Outlined"
+                                                       EnablePasswordVisibilityToggle="true"
+                                                       Hint="{i18n:Translate Password}">
+                            <Entry IsPassword="True"
+                                   Placeholder="{i18n:Translate PasswordPlaceHolder}"
+                                   Text="{Binding Password}" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+
+                    <Label FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           Text="{i18n:Translate ForgotPassword}"
+                           TextColor="{StaticResource ColorAccent}"
+                           VerticalOptions="CenterAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        Text="{i18n:Translate Login}" />
+                <Button Command="{Binding RegisterCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        Style="{StaticResource DangerButton}"
+                        Text="{i18n:Translate Register}" />
+            </StackLayout>
+        </StackLayout>
+        <busyindicator:SfBusyIndicator Title="{i18n:Translate Loading}"
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AnimationType="Gear"
+                                       BackgroundColor="{StaticResource ColorAccent}"
+                                       HorizontalOptions="Center"
+                                       IsBusy="{Binding IsRunning}"
+                                       TextColor="{StaticResource ColorFontInverse}"
+                                       VerticalOptions="Center"
+                                       ViewBoxHeight="80"
+                                       ViewBoxWidth="80" />
+    </AbsoluteLayout>
+
+</ContentPage>
