@@ -30,7 +30,6 @@ namespace MasterLogin.Prism.ViewModels
         private bool _isEnabled;
         private DelegateCommand _changeImageCommand;
         private DelegateCommand _registerCommand;
-        private DelegateCommand _register1Command;
 
         public RegisterPageViewModel(
             INavigationService navigationService,
@@ -55,9 +54,6 @@ namespace MasterLogin.Prism.ViewModels
 
         public DelegateCommand RegisterCommand => _registerCommand ??
             (_registerCommand = new DelegateCommand(RegisterAsync));
-
-        public DelegateCommand Register1Command => _register1Command ?? (_register1Command = new DelegateCommand(RegisterAsync1));
-
       
 
         public ImageSource Image
@@ -84,10 +80,6 @@ namespace MasterLogin.Prism.ViewModels
             set => SetProperty(ref _isEnabled, value);
         }
 
-        private async void RegisterAsync1()
-        {
-            throw new NotImplementedException();
-        }
 
         private async void RegisterAsync()
         {

@@ -119,14 +119,7 @@ namespace MasterLogin.Prism.ViewModels
             IsRunning = false;
             IsEnabled = true;
 
-            if (string.IsNullOrEmpty(_pageReturn))
-            {
-                //await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(ProductsPage)}");
-            }
-            else
-            {
-               // await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{_pageReturn}");
-            }
+            await _navigationService.NavigateAsync("/MasterLoginMasterDetailPage/NavigationPage/MainPage");
 
         }
 

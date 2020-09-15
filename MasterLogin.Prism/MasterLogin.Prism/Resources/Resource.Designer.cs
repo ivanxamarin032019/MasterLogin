@@ -574,6 +574,15 @@ namespace MasterLogin.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Main Page.
+        /// </summary>
+        public static string MainPape {
+            get {
+                return ResourceManager.GetString("MainPape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modify user.
         /// </summary>
         public static string ModifyUser {

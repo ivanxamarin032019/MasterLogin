@@ -49,6 +49,8 @@ namespace MasterLogin.Prism.Helpers
 
         public static string Logout => Resource.Logout;
 
+        public static string LoginFirstMessage => Resource.LoginFirstMessage;
+
         public static string Save => Resource.Save;
 
         public static string Document => Resource.Document;
@@ -147,6 +149,7 @@ namespace MasterLogin.Prism.Helpers
 
         public static string ChangePassworrdMessage => Resource.ChangePassworrdMessage;
 
-       
+        public static string MainPage => Resource.MainPape;
+
     }
 }

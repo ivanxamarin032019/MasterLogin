@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="MasterLogin.Prism.Views.RegisterPage"
+<ContentPage x:Class="MasterLogin.Prism.Views.ModifyUserPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
@@ -15,11 +15,9 @@
              BackgroundColor="{StaticResource ColorBackground}">
 
     <AbsoluteLayout>
-
         <StackLayout Padding="5"
                      AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All">
-
             <ScrollView>
                 <StackLayout Spacing="0">
                     <ffimageloading:CachedImage Margin="5"
@@ -37,22 +35,41 @@
                         </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
 
-                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Email}">
-                        <Entry Keyboard="Email"
-                               Placeholder="{i18n:Translate EmailPlaceHolder}"
-                               Text="{Binding User.Email}" />
-                    </inputLayout:SfTextInputLayout>
-
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Document}">
                         <Entry Placeholder="{i18n:Translate DocumentPlaceHolder}" Text="{Binding User.Document}" />
                     </inputLayout:SfTextInputLayout>
 
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate FirstName}">
-                        <Entry Placeholder="{i18n:Translate FirstNamePlaceHolder}" Text="{Binding User.FirstName}" />
+                        <Entry IsEnabled="{Binding IsOnSaleUser}"
+                               Placeholder="{i18n:Translate FirstNamePlaceHolder}"
+                               Text="{Binding User.FirstName}" />
                     </inputLayout:SfTextInputLayout>
 
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate LastName}">
-                        <Entry Placeholder="{i18n:Translate LastName}" Text="{Binding User.LastName}" />
+                        <Entry IsEnabled="{Binding IsOnSaleUser}"
+                               Placeholder="{i18n:Translate LastName}"
+                               Text="{Binding User.LastName}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Country}">
+                        <Picker Title="{i18n:Translate CountryPlaceHolder}"
+                                ItemDisplayBinding="{Binding Name}"
+                                ItemsSource="{Binding Countries}"
+                                SelectedItem="{Binding Country}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Department}">
+                        <Picker Title="{i18n:Translate DepartmentPlaceHolder}"
+                                ItemDisplayBinding="{Binding Name}"
+                                ItemsSource="{Binding Departments}"
+                                SelectedItem="{Binding Department}" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate City}">
+                        <Picker Title="{i18n:Translate CityPlaceHolder}"
+                                ItemDisplayBinding="{Binding Name}"
+                                ItemsSource="{Binding Cities}"
+                                SelectedItem="{Binding City}" />
                     </inputLayout:SfTextInputLayout>
 
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Address}">
@@ -62,32 +79,19 @@
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" Hint="{i18n:Translate Phone}">
                         <Entry Keyboard="Telephone"
                                Placeholder="{i18n:Translate PhonePlaceHolder}"
-                               Text="{Binding User.Phone}" />
+                               Text="{Binding User.PhoneNumber}" />
                     </inputLayout:SfTextInputLayout>
-
-                    <inputLayout:SfTextInputLayout ContainerType="Outlined"
-                                                   EnablePasswordVisibilityToggle="true"
-                                                   Hint="{i18n:Translate Password}">
-                        <Entry IsPassword="True"
-                               Placeholder="{i18n:Translate PasswordPlaceHolder}"
-                               Text="{Binding User.Password}" />
-                    </inputLayout:SfTextInputLayout>
-
-                    <inputLayout:SfTextInputLayout ContainerType="Outlined"
-                                                   EnablePasswordVisibilityToggle="true"
-                                                   Hint="{i18n:Translate PasswordConfirm}">
-                        <Entry IsPassword="True"
-                               Placeholder="{i18n:Translate PasswordConfirmPlaceHolder}"
-                               Text="{Binding User.PasswordConfirm}" />
-                    </inputLayout:SfTextInputLayout>
-
                 </StackLayout>
             </ScrollView>
-
-            <Button Command="{Binding RegisterCommand}"
-                    IsEnabled="{Binding IsEnabled}"
-                    Text="{i18n:Translate Register}"
-                    VerticalOptions="EndAndExpand" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button Command="{Binding SaveCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        Text="{i18n:Translate Save}" />
+                <Button Command="{Binding ChangePasswordCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        Style="{StaticResource SecondaryButton}"
+                        Text="{i18n:Translate ChangePassword}" />
+            </StackLayout>
         </StackLayout>
         <busyindicator:SfBusyIndicator Title="{i18n:Translate Loading}"
                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"

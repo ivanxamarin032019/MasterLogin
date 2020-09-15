@@ -26,6 +26,7 @@ namespace MasterLogin.Prism.Droid
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             new SfBusyIndicatorRenderer();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
 
             LoadApplication(new App(new AndroidInitializer()));
         }

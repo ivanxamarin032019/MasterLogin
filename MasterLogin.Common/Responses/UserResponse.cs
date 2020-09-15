@@ -22,8 +22,8 @@ namespace MasterLogin.Common.Responses
         public Guid ImageId { get; set; }
 
         public string ImageFullPath => ImageId == Guid.Empty
-          ? $"https://onsaleivan.azurewebsites.net/images/noimage.png"
-          : $"https://onsaledemo.blob.core.windows.net/users/{ImageId}";
+          ? $"https://onsaleweb.azurewebsites.net/images/noimage.png"
+          : $"https://onsale.blob.core.windows.net/users/{ImageId}";
 
         public UserType UserType { get; set; }
 

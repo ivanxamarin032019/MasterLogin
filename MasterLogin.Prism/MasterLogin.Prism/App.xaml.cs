@@ -10,8 +10,6 @@ using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
 
-
-
 namespace MasterLogin.Prism
 {
     public partial class App
@@ -26,9 +24,8 @@ namespace MasterLogin.Prism
             SyncfusionLicenseProvider.RegisterLicense("MzA4NTUxQDMxMzgyZTMyMmUzMGdtZmtxYXc5MmVvVURoTHBXaWFPY2hLbWtaTVJmRDl1eUVodWw1V1NQNWM9");
 
             InitializeComponent();
-            // await NavigationService.NavigateAsync("NavigationPage/LoginPage");
-            await NavigationService.NavigateAsync(nameof(LoginPage));
-
+             await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+//            await NavigationService.NavigateAsync(nameof(LoginPage));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -43,6 +40,10 @@ namespace MasterLogin.Prism
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<RecoverPasswordPage, RecoverPasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
+            containerRegistry.RegisterForNavigation<MasterLoginMasterDetailPage, MasterLoginMasterDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<ModifyUserPage, ModifyUserPageViewModel>();
+            containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPageViewModel>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
         }
     }
 }
